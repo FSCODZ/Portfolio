@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh; /* Ensure the section takes full viewport height */
+  padding-top: 60px; /* Adjust this if needed for your navbar height */
+  margin-bottom: 60px; /* Add space between sections */
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Adjust gap between skill items */
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px; /* Adjust gap between icon and skill name */
+}
+
+.iconContainer {
+  font-size: 3rem; /* Adjust icon size */
+  transition: transform 200ms ease-in-out;
+}
+
+.iconContainer:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 800px) {
+  .skillList {
+    gap: 40px;
+  }
+
+  .iconContainer {
+    font-size: 4rem; 
+  }
+}
+
+@media (min-width: 1400px) {
+  .skillList {
+    gap: 50px;
+  }
+
+  .iconContainer {
+    font-size: 5rem; 
+  }
+}
