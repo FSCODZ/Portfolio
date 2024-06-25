@@ -20,28 +20,28 @@ function Skills() {
     <section id="skills" className={styles.container}>
       <h1 className="sectionTitle">Skills</h1>
       <div className={styles.skillList}>
-        <SkillIcon icon={<FaHtml5 className={styles.icon} />} skill="HTML" />
-        <SkillIcon icon={<FaCss3Alt className={styles.icon} />} skill="CSS" />
+        <SkillIcon icon={<FaHtml5 className={styles.icon} color="orange"/>} skill="HTML" />
+        <SkillIcon icon={<FaCss3Alt className={styles.icon} color="blue"/>} skill="CSS" />
         <SkillIcon
-          icon={<FaJsSquare className={styles.icon} />}
+          icon={<FaJsSquare className={styles.icon} color="yellow"/>}
           skill="JavaScript"
         />
       </div>
       <hr />
       <div className={styles.skillList}>
-        <SkillIcon icon={<FaReact className={styles.icon} />} skill="React" />
-        <SkillIcon icon={<FaNode className={styles.icon} />} skill="Node" />
-        <SkillIcon icon={<FaFigma className={styles.icon} />} skill="Figma" />
+        <SkillIcon icon={<FaReact className={styles.icon} color="aqua"/>} skill="React" />
+        <SkillIcon icon={<FaNode className={styles.icon} color="green" />} skill="Node" />
+        <SkillIcon icon={<FaFigma className={styles.icon} color="blue" />} skill="Figma" />
       </div>
       <hr />
       <div className={styles.skillList}>
         <SkillIcon icon={<FaGit className={styles.icon} />} skill="Git" />
         <SkillIcon
-          icon={<FaBootstrap className={styles.icon} />}
+          icon={<FaBootstrap className={styles.icon}color="purple" />}
           skill="Bootstrap"
         />
         <SkillIcon
-          icon={<SiTailwindcss className={styles.icon} />}
+          icon={<SiTailwindcss className={styles.icon} color="blue"/>}
           skill="Tailwind"
         />
       </div>
