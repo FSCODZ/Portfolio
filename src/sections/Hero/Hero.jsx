@@ -6,27 +6,27 @@ import moon from "../../assets/måne.jpg";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import CV from "../../assets/cv.pdf";
 import { useTheme } from "../../common/ThemeContext";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
+import BackgroundScene from "../../common/BackgroundScene"; // Three.js bakgrund
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
   const themeIcon = theme === "light" ? sun : moon;
 
-  // Animation settings for coming in from the right
   const containerVariants = {
-    hidden: { opacity: 0, x: 50 },  // Starts 50px to the right
+    hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,
-      x: 0, // Moves to its original position
+      x: 0,
       transition: { duration: 0.8, staggerChildren: 0.2 }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: 50 },  // Each item starts 50px to the right
+    hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,
-      x: 0,  // Moves to its original position
+      x: 0,
       transition: { duration: 0.8 }
     }
   };
@@ -39,22 +39,21 @@ function Hero() {
       animate="visible"
       variants={containerVariants}
     >
+      {/* Three.js background */}
+      <BackgroundScene /> 
+
       <motion.div className={styles.colorModeContainer} variants={itemVariants}>
         <motion.img
           src={heroImg}
           className={styles.hero}
           alt="Profile picture of FSCODZ"
-          initial={{ x: 100 }}  // Starts 100px to the right
-          animate={{ x: 0 }}  // Moves to original position
+          initial={{ x: 100 }}
+          animate={{ x: 0 }}
           transition={{ duration: 0.8 }}
         />
-        <img
-          className={styles.colorMode}
-          src={themeIcon}
-          alt="Color mode icon"
-          onClick={toggleTheme}
-        />
+        
       </motion.div>
+      
       <motion.div className={styles.info} variants={itemVariants}>
         <h1>
           Filip

@@ -1,3 +1,8 @@
+/* Detta påverkar textfärgen för texten under ikonerna */
+.skillItem div {
+  color: white; /* Sätt textfärgen till vit */
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -12,6 +17,7 @@
 .sectionTitle {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: white; /* Lägg till om du vill ha vit titel också */
 }
 
 .skillList {

@@ -13,6 +13,34 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Shader-kod -->
+    <script id="vertexShader" type="x-shader/x-vertex">
+      void main() {
+        gl_Position = vec4(position, 1.0);
+      }
+    </script>
+
+    <script id="fragmentShader" type="x-shader/x-fragment">
+      uniform float u_time;
+      uniform vec2 u_resolution;
+      uniform sampler2D u_noise;
+      uniform vec2 u_mouse;
+
+      void main() {
+        vec2 st = gl_FragCoord.xy / u_resolution;
+        vec3 color = vec3(0.0);
+
+        vec2 noiseCoords = vec2(st.x * 3.0, st.y * 3.0 + u_time * 0.1);
+        float noise = texture2D(u_noise, noiseCoords).r;
+
+        color = vec3(st.x + noise * 0.2, st.y + noise * 0.2, 0.5 + noise * 0.5);
+
+        gl_FragColor = vec4(color, 1.0);
+      }
+    </script>
+
+    <!-- Laddar React-applikationen -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
