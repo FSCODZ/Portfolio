@@ -1,7 +1,7 @@
 import styles from "./ProjectsStyles.module.css";
 import väder from "../../assets/väder.png";
 import ProjectCard from "../../common/ProjectCard";
-import moviefinder from "../../assets/moviefinder.jpeg";
+import moviefinder from "../assets/moviefinder.jpeg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
