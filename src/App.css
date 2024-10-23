@@ -25,17 +25,18 @@ html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
-  position: relative; /* Behövs för att absolut positionerat innehåll ska fungera */
+  position: relative;
+  overflow-x: hidden; /* Förhindra horisontell scroll */
 }
 
 body {
   background-color: black;
   font-family: "Roboto Mono", monospace;
-  position: relative; /* Behövs för att absolut positionerat innehåll ska fungera */
+  position: relative;
 }
 
 #root {
-  flex: 1;  /* Se till att root-elementet fyller hela höjden */
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -43,12 +44,12 @@ body {
 
 /* Three.js canvas-styling */
 canvas {
-  position: fixed; /* fixed istället för absolute för att hålla det i bakgrunden även vid scroll */
+  position: fixed; /* Håller canvasen fast i bakgrunden */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;  /* Ser till att canvasen ligger längst bak */
+  z-index: -1;
 }
 
 h1, h2, h3, p {
@@ -88,7 +89,7 @@ p {
 }
 
 /* Media Queries */
-@media (width >= 800px) {
+@media (min-width: 800px) {
   #root {
     gap: 100px;
   }
@@ -106,7 +107,7 @@ p {
   }
 }
 
-@media (width >= 1400px) {
+@media (min-width: 1400px) {
   #root {
     gap: 200px;
   }

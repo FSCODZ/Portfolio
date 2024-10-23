@@ -21,7 +21,7 @@ function BackgroundShader() {
     );
 
     function init(texture) {
-      container = document.body; // Use body to cover entire page
+      container = document.body; // Täcker hela sidan
 
       camera = new THREE.Camera();
       camera.position.z = 1;
@@ -49,8 +49,8 @@ function BackgroundShader() {
       renderer = new THREE.WebGLRenderer();
       renderer.setPixelRatio(window.devicePixelRatio);
 
-      // Make renderer cover the entire page
-      renderer.setSize(window.innerWidth, document.body.scrollHeight);
+      // Uppdatera så att renderern täcker både fönstrets och sidans höjd
+      renderer.setSize(window.innerWidth, Math.max(window.innerHeight, document.body.scrollHeight));
       container.appendChild(renderer.domElement);
 
       onWindowResize();
@@ -66,9 +66,12 @@ function BackgroundShader() {
     }
 
     function onWindowResize() {
-      renderer.setSize(window.innerWidth, document.body.scrollHeight); // Full height of the page
-      uniforms.u_resolution.value.x = renderer.domElement.width;
-      uniforms.u_resolution.value.y = renderer.domElement.height;
+      const width = window.innerWidth;
+      const height = Math.max(window.innerHeight, document.body.scrollHeight); // Hanterar höjd korrekt
+      renderer.setSize(width, height);
+      
+      uniforms.u_resolution.value.x = width;
+      uniforms.u_resolution.value.y = height;
     }
 
     function animate(delta) {
@@ -82,7 +85,7 @@ function BackgroundShader() {
     }
   }, []);
 
-  return null; // No need for a div or container, as the canvas covers the body
+  return null; // Ingen container behövs, canvas täcker redan sidan
 }
 
 export default BackgroundShader;

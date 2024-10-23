@@ -1,7 +1,7 @@
 import styles from "./ProjectsStyles.module.css";
 import väder from "../../assets/väder.png";
 import ProjectCard from "../../common/ProjectCard";
-import CIO from "../../assets/CIO.jpeg";
+import moviefinder from "../../assets/moviefinder.jpeg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -29,10 +29,10 @@ function Projects() {
       <h1 className="sectionTitle">Projects</h1>
       <div className={styles.projectsContainer}>
         <ProjectCard
-          src={CIO}
-          link="https://cioforetag.netlify.app/"
-          h3="CIO"
-          p="E-commerce"
+          src={moviefinder}
+          link="https://next-to-watch.netlify.app/?timeWindow=day"
+          h3="Moviefinder"
+          p="Website to look for new movies"
         />
         <ProjectCard
           src={väder}
