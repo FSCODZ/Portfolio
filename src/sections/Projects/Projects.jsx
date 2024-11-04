@@ -1,7 +1,8 @@
 import styles from "./ProjectsStyles.module.css";
 import väder from "../../assets/väder.png";
 import ProjectCard from "../../common/ProjectCard";
-import moviefinder from "../assets/moviefinder.jpeg";
+import moviefinder from "../../assets/moviefinder.jpg";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -32,13 +33,15 @@ function Projects() {
           src={moviefinder}
           link="https://next-to-watch.netlify.app/?timeWindow=day"
           h3="Moviefinder"
-          p="Website to look for new movies"
+          p="Your personal Moviefinder"
+
         />
         <ProjectCard
           src={väder}
           link="https://weather-fs.netlify.app/"
           h3="WEATHERFZ"
           p="Weather app"
+
         />
       </div>
     </motion.section>

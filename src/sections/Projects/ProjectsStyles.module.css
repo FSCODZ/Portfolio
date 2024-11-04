@@ -17,10 +17,17 @@
 }
 
 img {
-  max-width: 250px;
+  max-width: 250px; 
   align-self: center;
   background-color: var(--project-card-bg);
   border-radius: 20px;
+}
+
+.projectsContainer img:first-child {
+  max-width: 300px; 
+  width: 300px; 
+  height: 300px; 
+  object-fit: cover; 
 }
 
 a {
@@ -34,11 +41,15 @@ a:hover {
   transform: scale(1.05);
 }
 
-@media (width >= 800px) {
+@media (min-width: 800px) {
   .projectsContainer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 0 30px;
+  }
+
+  img {
+    max-width: 350px; 
   }
 }
